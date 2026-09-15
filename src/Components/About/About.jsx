@@ -3,8 +3,7 @@ import about from "../../assets/About.png";
 import { IoArrowForward, IoSparkles, IoRibbonOutline, IoOpenOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
-// Uncomment when your AI assistant is ready.
-// import PortfolioAssistant from "./PortfolioAssistant";
+
 
 const strengths = [
   {
@@ -44,8 +43,7 @@ const strengths = [
   },
 ];
 
-// PDFs live in public/Cetificates/. Replace remaining "#" links once those
-// certificate files are added to the same folder.
+
 const certificates = [
   {
     title: "Meta Frontend Developer Certificate",
@@ -194,10 +192,7 @@ function About() {
           </div>
         </div>
 
-        {/* Optional AI assistant */}
-        {/*
-        <PortfolioAssistant />
-        */}
+ 
       </motion.div>
     </section>
   );
