@@ -3,18 +3,18 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'meetvyas255@gmail.com',
-    pass: 'oyzlspsdbqsefhwa', // Gmail App Password
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
 
 const sendMail = async (name, email, message) => {
   const mailOptions = {
-    from: 'meetvyas255@gmail.com',
-    to: 'your-email@gmail.com', // replace with your receiving address
+    from: process.env.GMAIL_USER,
+    to: process.env.CONTACT_RECEIVER_EMAIL,
     subject: `New Contact Form Submission from ${name}`,
     text: `
-You’ve received a new message from your portfolio:
+You've received a new message from your portfolio:
 
 Name: ${name}
 Email: ${email}
@@ -22,7 +22,6 @@ Email: ${email}
 Message:
 ${message}
     `.trim(),
-
     html: `
       <div style="font-family: Arial, sans-serif; padding: 10px;">
         <h2>New Contact Form Submission</h2>
